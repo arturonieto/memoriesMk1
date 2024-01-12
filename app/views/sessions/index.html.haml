@@ -2,8 +2,8 @@
   .container
     .row
       .col-md-6.offset-md-3.login-container
-        %h1.text-center Login
-        %form(action="/login" method="post")
+        %h1.text-center Memorie's
+        =form_with(method: 'post', url: sessions_create_path) do
           .form-group
             %label(for="username") Username:
             %input.form-control(type="text" name="username" required)
@@ -12,5 +12,5 @@
             %label(for="password") Password:
             %input.form-control(type="password" name="password" required)
 
-          %button.btn.btn-primary(type="submit") Login
+          %button.btn.btn-primary.float-end(type="submit") Login
 

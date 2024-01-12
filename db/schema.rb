@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_09_032820) do
     t.index ["username"], name: "index_users_on_username", unique: true
     t.check_constraint "auth::text = 'administrator'::text OR auth::text = 'client'::text", name: "proper_auth"
     t.check_constraint "email::text ~* '^[A-Za-z0-9._+%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$'::text", name: "proper_email"
-    t.check_constraint "username::text ~ '^[a-zA-Z0-9]*$'::text", name: "proper_username"
+    t.check_constraint "username::text ~ '^[a-z0-9]*$'::text", name: "proper_username"
   end
 
 end

@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.index :email, unique: true
       t.index :username, unique: true
       t.check_constraint("email ~* '^[A-Za-z0-9._+%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$'", name: "proper_email")
-      t.check_constraint("username ~ '^[a-zA-Z0-9]*$'", name: "proper_username")
+      t.check_constraint("username ~ '^[a-z0-9]*$'", name: "proper_username")
       t.check_constraint("auth = 'administrator' OR auth = 'client'", name: "proper_auth") # starting w client/administrator
       t.timestamps
     end

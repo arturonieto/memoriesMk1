@@ -8,4 +8,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "sessions#index"
+
+  post "/login" => "sessions#create", as: :sessions_create
+  get "/landing" => "sessions#landing", as: :sessions_landing
+  post "/logout" => "sessions#destroy", as: :sessions_destroy
 end
