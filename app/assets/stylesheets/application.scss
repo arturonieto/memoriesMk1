@@ -5,27 +5,3 @@ body{
 	  background-color: #f8f9fa;
 }
 
-div.sessions_index{
-          color: #495057;
-          font-family: 'Arial', sans-serif;
-          padding-top: 5rem;
-          padding-bottom: 5rem;
-
-	  .container{
-		width:80%;
-
-		 .login-container{
-			background-color: #ffffff;
-			border-radius: 10px;
-			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-			padding: 20px;
-
-			.btn-primary{
-				width:30%;
-				background-color: #007bff;
-				border: none;
-				margin-top: 20px;
-			}
-		}
-	}
-}

@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   include SessionsHelper
   before_action :require_user, except: [:index, :create]
   def index
-    if $current_user = User.find_by_id(session[:current_user_id])
+    if session[:current_user_id] and $current_user = User.find_by_id(session[:current_user_id])
       #logger.debug $current_user
       redirect_to sessions_landing_path
     end

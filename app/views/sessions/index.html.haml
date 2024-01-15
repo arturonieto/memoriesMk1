@@ -1,16 +1,16 @@
-%div.sessions_index
-  .container
-    .row
-      .col-md-6.offset-md-3.login-container
-        %h1.text-center Memorie's
-        =form_with(method: 'post', url: sessions_create_path) do
-          .form-group
-            %label(for="username") Username:
-            %input.form-control(type="text" name="username" required)
+= stylesheet_link_tag "sessions.index", "data-turbo-track": "reload"
+.container
+  .row
+    .col-md-6.offset-md-3.login_form
+      %h1.text-center Memorie's
+      =form_with(method: 'post', url: sessions_create_path) do
+        .form-group
+          %label(for="username") Username:
+          %input.form-control(type="text" name="username" required)
 
-          .form-group
-            %label(for="password") Password:
-            %input.form-control(type="password" name="password" required)
+        .form-group
+          %label(for="password") Password:
+          %input.form-control(type="password" name="password" required)
 
-          %button.btn.btn-primary.float-end(type="submit") Login
+        %button.btn.btn-primary.float-end(type="submit") Login
 
