@@ -1,0 +1,5 @@
+= stylesheet_link_tag "header", "data-turbo-track": "reload"
+.header
+  %nav.navbar.fixed-top
+    .container.justify-content-end
+      =button_to 'logout', sessions_destroy_path, method: 'post', class: 'btn btn-primary'

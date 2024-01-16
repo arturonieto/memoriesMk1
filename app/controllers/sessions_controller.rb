@@ -1,24 +1,23 @@
 class SessionsController < ApplicationController
   include SessionsHelper
-  before_action :require_user, except: [:index, :create]
+  before_action :check_session
+  before_action :go_to_login, only: [:landing]
   def index
-    if session[:current_user_id] and $current_user = User.find_by_id(session[:current_user_id])
-      #logger.debug $current_user
-      redirect_to sessions_landing_path
-    end
   end
   def landing
   end
   def create
-    if user = User.find_by_username(params[:username].downcase)
-      if user.authenticate(params[:password])
-        session[:current_user_id] = user.id
+    if $current_user = User.find_by_username(params[:username].downcase)
+      if $current_user.authenticate(params[:password])
+        session[:current_user_id] = $current_user.id
+        return redirect_to sessions_landing_path
       end
     end
-    redirect_to root_path
+    go_to_login
   end
   def destroy
     session[:current_user_id] = nil
-    redirect_to root_path
+    check_session
+    go_to_login
   end
 end
