@@ -1,3 +1,5 @@
+- content_for :head do
+  = javascript_import_module_tag "sessionsLanding"
 = stylesheet_link_tag "sessions.landing", "data-turbo-track": "reload"
 .container.treed_form.sessions_landing
   .row
