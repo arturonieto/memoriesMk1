@@ -1,13 +1,13 @@
 - content_for :head do
-  = javascript_import_module_tag "sessionsLanding"
+  = javascript_import_module_tag "controllers/sessionsLanding"
 = stylesheet_link_tag "sessions.landing", "data-turbo-track": "reload"
-.container.treed_form.sessions_landing
-  .row
-    .col-md-6.text-center
+.container.sessions_landing
+  .row.justify-content-center
+    .col-md-3.treed_form.text-center
+      =image_tag 'no.pic.user.png', class: 'img-fluid rounded', alt: 'Responsive image'
+      %h2= $current_user.username
+    .col-md-5.treed_form.text-center
+      %h3 Grupos recientes
+    .col-md-3.treed_form.text-center
       %h1 Inventario
-    .col-md-6.text-center
-      %h1 Grupos
-  .row
-    .col-md-12.text-center
-      %h1 Levantar pedido
 

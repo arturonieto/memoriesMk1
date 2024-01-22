@@ -1,0 +1,2 @@
+// app/javascripts/controllers/sessionsLanding
+
